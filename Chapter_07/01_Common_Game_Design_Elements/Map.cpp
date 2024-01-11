@@ -194,7 +194,7 @@ void Map::Update(float l_dT)
 		m_loadNextMap = false;
 		if (m_nextMap != "")
 		{
-			LoadMap("media/maps/" + m_nextMap);
+			LoadMap("media\\maps\\" + m_nextMap);
 		}
 		else
 		{

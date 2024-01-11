@@ -43,6 +43,7 @@ void State_Game::Deactivate() {}
 void State_Game::Update(const sf::Time& l_time)
 {
 	SharedContext* context = m_stateMgr->GetContext();
+
 	EntityBase* player = context->m_entityManager->Find("Player");
 	if (!player)
 	{

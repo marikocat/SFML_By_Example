@@ -16,7 +16,6 @@ EntityManager::~EntityManager()
 
 int EntityManager::Add(const EntityType& l_type, const std::string& l_name)
 {
-	std::cout << "EntityManager::Add()\n";
 	auto itr = m_entityFactory.find(l_type);
 	if (itr == m_entityFactory.end()) 
 		return -1;
@@ -37,7 +36,6 @@ int EntityManager::Add(const EntityType& l_type, const std::string& l_name)
 	}
 
 	++m_idCounter;
-	std::cout << "EntityManager::Add() end\n";
 	return m_idCounter - 1;
 }
 
