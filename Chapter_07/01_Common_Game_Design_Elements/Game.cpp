@@ -2,7 +2,7 @@
 
 #include <iostream>
 
-Game::Game() : m_window("Chapter 6", sf::Vector2u(800, 600)), 
+Game::Game() : m_window("Chapter 7", sf::Vector2u(800, 600)), 
 	m_stateManager(&m_context), m_entityManager(&m_context, 100)
 {
 	m_clock.restart();
