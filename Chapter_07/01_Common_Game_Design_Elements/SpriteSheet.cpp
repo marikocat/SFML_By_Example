@@ -1,7 +1,10 @@
 #include "SpriteSheet.h"
 
 SpriteSheet::SpriteSheet(TextureManager* l_textMgr)
-	: m_textureManager(l_textMgr), m_animationCurrent(nullptr), m_spriteScale(1.f, 1.f), m_direction(Direction::Right) {}
+	: m_textureManager(l_textMgr), m_animationCurrent(nullptr), m_spriteScale(1.f, 1.f), m_direction(Direction::Right)
+{
+	std::cout << "Constructing new SpriteSheet!!!\n";
+}
 
 SpriteSheet::~SpriteSheet() { ReleaseSheet(); }
 
@@ -50,6 +53,7 @@ void SpriteSheet::SetDirection(const Direction& l_dir)
 
 bool SpriteSheet::LoadSheet(const std::string& l_file)
 {
+	std::cout << "-- Loading new SpriteSheet for file: " << l_file << std::endl;
 	std::ifstream sheet;
 	sheet.open(Utils::GetResourceDirectory() + l_file);
 	if (sheet.is_open())
@@ -138,6 +142,7 @@ bool SpriteSheet::LoadSheet(const std::string& l_file)
 
 void SpriteSheet::ReleaseSheet()
 {
+	std::cout << "Releasing SpriteSheet for: " << m_texture << std::endl;
 	m_textureManager->ReleaseResource(m_texture);
 	m_animationCurrent = nullptr;
 	while (m_animations.begin() != m_animations.end())

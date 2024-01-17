@@ -54,6 +54,7 @@ void Character::GetHurt(const int& l_damage)
 
 void Character::Load(const std::string& l_path)
 {
+	std::cout << "--- Loading Character from file: " << l_path << std::endl;
 	std::ifstream file;
 	file.open(Utils::GetResourceDirectory() + std::string("media\\Characters\\") + l_path);
 	if (!file.is_open())
@@ -69,7 +70,6 @@ void Character::Load(const std::string& l_path)
 		std::stringstream keystream(line);
 		std::string type;
 		keystream >> type;
-		std::cout << type << "\n";
 		if (type == "Name")
 		{
 			keystream >> m_name;
