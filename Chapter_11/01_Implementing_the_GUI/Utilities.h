@@ -14,7 +14,7 @@ namespace Utils
 #include <pathcch.h>
 	inline std::string GetWorkingDirectory()
 	{
-		HMODULE hModule = GetModuleHandle(nullptr);
+		HMODULE hModule = GetModuleHandleA(nullptr);
 		if (hModule)
 		{
 			char path[256];
